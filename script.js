@@ -151,30 +151,5 @@ window.addEventListener("load", () => {
         })
         .catch(error => console.error("Error loading boxes data:", error));
 
-    // Initialize Rive animation for the logo.
-    const logoCanvas = document.getElementById('logo-animation');
-    if (logoCanvas) {
-        const logoAnimation = new rive.Rive({
-            src: 'rive-files/logo.riv', // Update with your logo file.
-            autoplay: true,
-            canvas: logoCanvas,
-            layout: new rive.Layout({
-                fit: rive.Fit.Contain,
-                alignment: rive.Alignment.Center
-            }),
-            // stateMachines: ["yourStateMachineName"], // Uncomment/update as needed.
-        });
-
-        function resizeLogo() {
-            const dpr = window.devicePixelRatio || 1;
-            logoCanvas.width = logoCanvas.clientWidth * dpr;
-            logoCanvas.height = logoCanvas.clientHeight * dpr;
-            const ctx = logoCanvas.getContext('2d');
-            ctx.scale(dpr, dpr);
-            logoAnimation.resizeDrawingSurfaceToCanvas();
-        }
-
-        window.addEventListener('resize', resizeLogo);
-        resizeLogo();
-    }
+    
 });
