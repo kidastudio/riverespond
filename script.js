@@ -1,5 +1,5 @@
 window.addEventListener("load", () => {
-    // Main canvas Rive instance
+    // Main canvas Rive instance Hero animation.
     const riveInstance = new rive.Rive({
         src: "rive-files/kidaheroflex.riv",
         autoplay: true,
